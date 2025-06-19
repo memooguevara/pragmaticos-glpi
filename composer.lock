@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d3ef89fff994fb241798a675b138cd3",
+    "content-hash": "158ca2ac0fd3ccfc88ba7431397e9c15",
     "packages": [
         {
             "name": "brick/math",
@@ -4996,16 +4996,16 @@
         },
         {
             "name": "wapmorgan/unified-archive",
-            "version": "1.1.10",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wapmorgan/UnifiedArchive.git",
-                "reference": "3fc76bbe24e5ff4789738dd7ee5fb01307ae3021"
+                "reference": "5f02ad060223fd714aaf7f64a18d8e819ac0ab93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wapmorgan/UnifiedArchive/zipball/3fc76bbe24e5ff4789738dd7ee5fb01307ae3021",
-                "reference": "3fc76bbe24e5ff4789738dd7ee5fb01307ae3021",
+                "url": "https://api.github.com/repos/wapmorgan/UnifiedArchive/zipball/5f02ad060223fd714aaf7f64a18d8e819ac0ab93",
+                "reference": "5f02ad060223fd714aaf7f64a18d8e819ac0ab93",
                 "shasum": ""
             },
             "require": {
@@ -5043,19 +5043,19 @@
             "type": "library",
             "extra": {
                 "phar-builder": {
-                    "compression": "BZip2",
                     "name": "cam.phar",
-                    "output-dir": "./",
-                    "entry-point": "bin/cam",
+                    "events": {
+                        "command.package.end": "chmod +x cam.phar && rm bin/version.txt",
+                        "command.package.start": "git describe --tags > bin/version.txt"
+                    },
                     "include": [
                         "bin",
                         "src",
                         "vendor"
                     ],
-                    "events": {
-                        "command.package.start": "git describe --tags > bin/version.txt",
-                        "command.package.end": "chmod +x cam.phar && rm bin/version.txt"
-                    }
+                    "output-dir": "./",
+                    "compression": "BZip2",
+                    "entry-point": "bin/cam"
                 }
             },
             "autoload": {
@@ -5091,9 +5091,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wapmorgan/UnifiedArchive/issues",
-                "source": "https://github.com/wapmorgan/UnifiedArchive/tree/1.1.10"
+                "source": "https://github.com/wapmorgan/UnifiedArchive/tree/1.2.0"
             },
-            "time": "2023-01-17T00:15:57+00:00"
+            "time": "2023-06-30T15:52:56+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -8011,7 +8011,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
@@ -8038,5 +8038,5 @@
     "platform-overrides": {
         "php": "7.4.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
