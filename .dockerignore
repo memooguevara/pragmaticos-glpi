@@ -1,14 +1,15 @@
- .git
-# .gitignore
-# .github
-# .devcontainer
-# .dockerignore
-# node_modules/
-# vendor/
-# .env
-# .env.*
-# .vscode/
-# .idea/
-# phpunit.xml
-# phpunit.xml.dist
-# tests/
+#.git
+#.gitignore
+#.github
+#.devcontainer
+#prod/
+## .dockerignore
+#node_modules/
+#vendor/
+#.env
+#.env.*
+#.vscode/
+#.idea/
+## phpunit.xml
+## phpunit.xml.dist
+## tests/
