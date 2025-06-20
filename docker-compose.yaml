@@ -38,6 +38,9 @@ services:
     networks:
       - default
 
+volumes:
+  db:
+
 networks:
   default:
     name: ${COMPOSE_PROJECT_NAME}-docker
