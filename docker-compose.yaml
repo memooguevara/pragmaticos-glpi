@@ -1,5 +1,6 @@
 services:
   nginx:
+    container_name: glpi-nginx
     image: nginx:1.28.0
     restart: unless-stopped
     volumes:
@@ -10,9 +11,10 @@ services:
     ports:
       - "8080:80"
     networks:
-      - default
+      - glpi-app-net
 
   php:
+    container_name: glpi-php
     build:
       context: .
       dockerfile: ./.docker/php/Dockerfile
@@ -20,9 +22,10 @@ services:
     volumes:
       - ./:/var/www/html
     networks:
-      - default
+      - glpi-app-net
 
   db:
+    container_name: glpi-db
     image: "mariadb:11.4"
     restart: "unless-stopped"
     volumes:
@@ -36,11 +39,11 @@ services:
     ports:
       - ${DB_PORT:-3306}:3306
     networks:
-      - default
+      - glpi-app-net
 
 volumes:
   db:
 
 networks:
-  default:
-    name: ${COMPOSE_PROJECT_NAME}-docker
+  glpi-app-net:
+    name: glpi-app-net
